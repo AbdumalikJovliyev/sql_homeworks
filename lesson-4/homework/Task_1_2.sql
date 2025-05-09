@@ -19,11 +19,17 @@ VALUES
 
 
 --If all the columns having zero value then don't show that row.
+<<<<<<< HEAD
 select *from TestMultipleZero      --selecting all values and filtering them by rows.
 where not (A=0 and B=0 and C=0 and D=0)    -- When not all of the values are equal to 0 then we show that row in the table.
 
 
 
+=======
+
+select *from TestMultipleZero
+where not (A=0 and B=0 and C=0 and D=0)   
+>>>>>>> 3cee64a7725154100da5c942448b92eee689a12e
 
 --Write a query which will find maximum value from multiple columns of the table.
 
@@ -44,6 +50,7 @@ VALUES
     ,(2003,21,23,89)
     ,(2004,27,28,91);
 
+<<<<<<< HEAD
 SELECT 
     Year1, 
     Max1,
@@ -65,3 +72,17 @@ CASE
 END AS MaxValue
 FROM TestMax
 
+=======
+SELECT 
+    Year1,
+    Max1,
+    Max2,
+    Max3,
+    MaxValue = (SELECT MAX(v) 
+                FROM (VALUES (Max1), (Max2), (Max3)) AS ValueList(v))
+FROM TestMax;
+
+
+
+
+>>>>>>> 3cee64a7725154100da5c942448b92eee689a12e
