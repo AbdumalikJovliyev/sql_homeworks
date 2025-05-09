@@ -20,8 +20,8 @@ SELECT'Ramesh', '05/09/1983';
 
 
 --Write a query which will find the Date of Birth of employees whose birthdays lies between May 7 and May 15.
-select EmpId, EmpName from EmpBirth        -- choosing the id and name of the employees to filter our data
-where month(BirthDate)= '05' and (day(BirthDate)>=7 and day(BirthDate)<=15);         -- checking if the month is may by month = 5. also checking for days that lies between 7 and 15. 
+select * from EmpBirth        -- choosing the id and name of the employees to filter our data
+where month(BirthDate)= '05' and (day(BirthDate) between 7 and 15);         -- checking if the month is may by month = 5. also checking for days that lies between 7 and 15. 
 
 
 
@@ -89,3 +89,4 @@ ORDER BY
     WHEN letter = 'a' THEN 1      -- Among 'a's, delay the second/third ones
     ELSE 0                        -- 'b' and others remain unchanged
   END;
+ 
